@@ -5,7 +5,7 @@ from setuptools import setup
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 PLUGIN_ENTRY_POINT = 'ovos-stt-plugin-wit = ovos_stt_plugin_wit:WitSTT'
-CONFIG_ENTRY_POINT = 'ovos-stt-plugin-server.config = ovos_stt_plugin_wit:WitSTTConfig'
+CONFIG_ENTRY_POINT = 'ovos-stt-plugin-wit.config = ovos_stt_plugin_wit:WitSTTConfig'
 
 
 def get_version():
@@ -57,14 +57,14 @@ with open("readme.md", "r") as f:
 
 
 setup(
-    name='ovos-stt-plugin-server',
+    name='ovos-stt-plugin-wit',
     version=get_version(),
-    description='ovos stt server plugin for mycroft',
+    description='ovos stt wit plugin for mycroft',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/OpenVoiceOS/ovos-stt-server-plugin',
-    author='JarbasAi',
-    author_email='jarbasai@mailfence.com',
+    url='https://github.com/formigteen/ovos-stt-plugin-wit',
+    author='FormigTeen',
+    author_email='msformigteen@live.com',
     license='Apache-2.0',
     packages=['ovos_stt_plugin_wit'],
     install_requires=required("requirements/requirements.txt"),
