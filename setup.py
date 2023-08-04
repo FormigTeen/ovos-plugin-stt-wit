@@ -4,17 +4,14 @@ from setuptools import setup
 
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
-PLUGIN_ENTRY_POINT = (
-    'ovos-stt-plugin-server = ovos_stt_plugin_server:OVOSHTTPServerSTT',
-    'ovos-stt-plugin-server-streaming = ovos_stt_plugin_server:OVOSHTTPStreamServerSTT'
-)
-CONFIG_ENTRY_POINT = 'ovos-stt-plugin-server.config = ovos_stt_plugin_server:OVOSHTTPServerSTTConfig'
+PLUGIN_ENTRY_POINT = 'ovos-stt-plugin-wit = ovos_stt_plugin_wit:WitSTT'
+CONFIG_ENTRY_POINT = 'ovos-stt-plugin-server.config = ovos_stt_plugin_wit:WitSTTConfig'
 
 
 def get_version():
     """ Find the version of the package"""
     version = None
-    version_file = os.path.join(BASEDIR, 'ovos_stt_plugin_server', 'version.py')
+    version_file = os.path.join(BASEDIR, 'ovos_stt_plugin_wit', 'version.py')
     major, minor, build, alpha = (None, None, None, None)
     with open(version_file) as f:
         for line in f:
@@ -69,9 +66,9 @@ setup(
     author='JarbasAi',
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
-    packages=['ovos_stt_plugin_server'],
+    packages=['ovos_stt_plugin_wit'],
     install_requires=required("requirements/requirements.txt"),
-    package_data={'': package_files('ovos_stt_plugin_server')},
+    package_data={'': package_files('ovos_stt_plugin_wit')},
     zip_safe=True,
     include_package_data=True,
     classifiers=[

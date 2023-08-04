@@ -6,7 +6,7 @@ on:
     branches:
       - dev
     paths-ignore:
-      - 'ovos_stt_plugin_server/version.py'
+      - 'ovos_stt_plugin_wit/version.py'
       - '.github/**'
       - '.gitignore'
       - 'LICENSE'
